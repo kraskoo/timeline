@@ -1,0 +1,186 @@
+{
+	"config": {
+		"colors": {
+			"gray": "#7a7363",
+			"green": "#46563c",
+			"brown": "#57452d"
+		},
+		"divHeights": [ 7, 30, 53 ],
+		"yearDivider": "2000"
+	},
+	"defitions": {
+		"1": {
+			"name": "Category-1",
+			"color": "gray"
+		},
+		"2": {
+			"name": "Category-2",
+			"color": "green"
+		},
+		"3": {
+			"name": "Category-3",
+			"color": "brown"
+		},
+		"4": {
+			"name": "Category-4",
+			"color": "brown"
+		}
+	},
+	"events": {
+		"2014": {
+			"1": {
+				"15 july": "Some english text",
+				"19 july": "Some english text",
+				"21 july": "Some english text",
+				"22 july": [
+					"Some english text.",
+					"Some english text."
+				],
+				"2 august": "Some english text",
+				"2 - 11 august": "Some english text",
+				"4 august": "Some english text",
+				"5 august": "Some english text",
+				"6 august": "Some english text",
+				"8 - 12 august": "Some english text",
+				"10 august": "Some english text",
+				"23 - 30 august": "Some english text",
+				"26 august": "Some english text",
+				"1 september": "Some english text",
+				"9 - 14 september": "Some english text",
+				"30 octomber": "Some english text",
+				"3 november - 2 december": "Some english text"
+			}
+		},
+		"2015": {
+			"1": {
+				"6 february": "Some english text",
+				"13 april": "Some english text",
+				"25 september": "Some english text",
+				"22 december": "Some english text"
+			},
+			"2": {
+				"24 august": [
+					"Some english text.",
+					"Some english text."
+				],
+				"9 september": "Some english text",
+				"27 september": "Some english text",
+				"1 octomber": [
+					"Some english text.",
+					"Some english text."
+				],
+				"14 octomber": "Some english text",
+				"17 octomber - 21 november": "Some english text",
+				"20 octomber": "Some english text",
+				"23 octomber": "Some english text",
+				"1 - 24 november": "Some english text",
+				"6 november": "Some english text"
+			},
+			"3": {
+				"19 january": "Some english text",
+				"30 january": "Some english text",
+				"31 january": "Some english text",
+				"9 april": "Some english text",
+				"7 may": "Some english text",
+				"1 december": "Some english text"
+			}
+		},
+		"2016": {
+			"1": {
+				"7 february": "Some english text",
+				"9 january": "Some english text",
+				"23 february": "Some english text",
+				"25 february": "Some english text",
+				"1 april": "Some english text",
+				"4 june": "Some english text",
+				"20 december": "Some english text"
+			},
+			"2": {
+				"5 january": "Some english text",
+				"22 january": "Some english text",
+				"21 april": "Some english text",
+				"22 april": "Some english text",
+				"25 may": "Some english text",
+				"26 may": "Some english text",
+				"9 - 18 august": "Some english text",
+				"17 august": "Some english text",
+				"18 august": "Some english text",
+				"1 september": "Some english text",
+				"5 september": "Some english text",
+				"5 - 6 september": "Some english text",
+				"5 - 7 september": "Some english text",
+				"12 september": "Some english text",
+				"30 september": "Some english text",
+				"30 september - 4 octomber": "Some english text",
+				"1 octomber": "Some english text",
+				"2 octomber": "Some english text",
+				"6 - 11 octomber": "Some english text",
+				"14 octomber": "Some english text",
+				"19 octomber": "Some english text",
+				"23 octomber": "Some english text",
+				"19 november": "Some english text",
+				"23 november": "Some english text",
+				"29 november": "Some english text",
+				"13 december": "Some english text"
+			},
+			"4": {
+				"26 february": "Some english text",
+				"30 march": "Some english text",
+				"5 june": "Some english text",
+				"1 july": "Some english text",
+				"12 - 30 september": "Some english text"
+			}
+		},
+		"2017": {
+			"1": {
+				"31 january": "Some english text",
+				"6 april": "Some english text",
+				"27 june": "Some english text",
+				"24 octomber": "Some english text"
+			},
+			"2": {
+				"11 - 19 march": "Some english text",
+				"21 april - 9 may": "Some english text",
+				"22 april": "Some english text",
+				"1 may": "Some english text",
+				"16 may": "Some english text",
+				"26 may": "Some english text",
+				"4 june": "Some english text",
+				"8 july": "Some english text",
+				"25 november": "Some english text"
+			},
+			"4": {
+				"12 february": "Some english text",
+				"17 march": "Some english text",
+				"4 april": "Some english text",
+				"20 november": "Some english text"
+			}
+		},
+		"2018": {
+			"1": {
+				"3 march": "Some english text",
+				"8 - 13 august": "Some english text",
+				"26 september - 13 octomber": "Some english text",
+				"24 octomber": "Some english text",
+				"25 octomber": "Some english text",
+				"30 octomber": "Some english text",
+				"3 november": "Some english text",
+				"11 november": "Some english text"
+			},
+			"2": {
+				"10 may": "Some english text",
+				"18 may": "Some english text",
+				"29 - 31 may": "Some english text",
+				"6 - 9 june": "Some english text",
+				"18 august": "Some english text",
+				"9 september": "Some english text",
+				"15 september": "Some english text",
+				"16 - 19 september": "Some english text",
+				"20 - 25 september": "Some english text",
+				"27 september": "Some english text",
+				"29 september": "Some english text",
+				"2 - 4 octomber": "Some english text"
+			}
+		}
+	}
+}

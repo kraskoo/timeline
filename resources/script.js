@@ -152,11 +152,11 @@
 							let origin = null;
 							let day = 0;
 							let daysBeforeCurrentMonth = 0;
-							let match3 = categoryIndex.match(monthRegex3);
-							let match2 = categoryIndex.match(monthRegex2);
-							let match1 = categoryIndex.match(monthRegex1);
+							let match3 = categoryIndex.toLowerCase().match(monthRegex3);
+							let match2 = categoryIndex.toLowerCase().match(monthRegex2);
+							let match1 = categoryIndex.toLowerCase().match(monthRegex1);
 							if (match3 !== null) {
-								let currentMatch = match3[0].split(" - ");
+								let currentMatch = match3[0].toLowerCase().split(" - ");
 								let dayAndMonth = currentMatch[0].split(" ");
 								let month = getMonthAsNumber(dayAndMonth[1]);
 								day = parseInt(dayAndMonth[0]);
@@ -165,7 +165,7 @@
 								origin = title + " -<br />" + getTitle(parseInt(dayAndMonth2[0]), getMonthAsNumber(dayAndMonth2[1]), thisYear);
 								daysBeforeCurrentMonth = getDaysBeforeCurrentMonth(month, thisYear);
 							} else if (match2 !== null) {
-								let match = match2[0];
+								let match = match2[0].toLowerCase();
 								let dayAndRest = match.split(" - ");
 								let month = getMonthAsNumber(dayAndRest[1].split(" ")[1]);
 								day = parseInt(dayAndRest[0]);
@@ -173,7 +173,7 @@
 								origin = title + " -<br />" + getTitle(parseInt(dayAndRest[1]), month, thisYear)
 								daysBeforeCurrentMonth = getDaysBeforeCurrentMonth(month, thisYear);
 							} else if (match1 !== null) {
-								let dayAndMonth = match1[0].split(" ");
+								let dayAndMonth = match1[0].toLowerCase().split(" ");
 								let month = getMonthAsNumber(dayAndMonth[1]);
 								day = parseInt(dayAndMonth[0]);
 								title = origin = getTitle(day, month, thisYear);
@@ -316,36 +316,52 @@
 		return document.getElementById("inner-line");
 	});
 	let yearsLine = (function () {
-		return document.getElementById("years-line")
+		return document.getElementById("years-line");
 	});	
-	function initializeMovement () {
-		let bottom = document.getElementById("bottom");
-		bottom.addEventListener("mousedown", function (evnt) {
+	
+	function onDownOnLine(evnt) {
 			isMouseDownOnBottom = true;
 			startTime = new Date().getTime();
 			startPosition = parseFloat(innerLine().style.left);
-			clientXOnStart = evnt.clientX - startPosition;
-		}, true);
-		bottom.addEventListener("mousemove", function (evnt) {
-			let newPosition = evnt.clientX - clientXOnStart;
-			if (isInRange(newPosition) && isMouseDownOnBottom) {
-				canMove = true;
-				yearsLine().style.left = newPosition + "px";
-				innerLine().style.left = newPosition + "px";
-			}
-		}, true);
-		bottom.addEventListener("mouseup", function (evnt) {
+			if (evnt.type === "touchstart") clientXOnStart = evnt.changedTouches[0].clientX - startPosition;
+			else clientXOnStart = evnt.clientX - startPosition;
+	};
+	
+	function onMoveOnLine(evnt) {
+		let newPosition = 0;
+		if (evnt.type === "touchmove") newPosition = evnt.changedTouches[0].clientX - clientXOnStart;
+		else newPosition = evnt.clientX - clientXOnStart;
+		if (isInRange(newPosition) && isMouseDownOnBottom) {
+			canMove = true;
+			yearsLine().style.left = newPosition + "px";
+			innerLine().style.left = newPosition + "px";
+		}
+	};
+	
+	function onUpOnLine(evnt) {
+		isMouseDownOnBottom = false;
+		if (!isUsedByAnimation) canMove = false;
+		endTime = new Date().getTime();
+	};
+	
+	function onLeaveOnLine(evnt) {
+		if (!$(evnt.target).hasClass("box") && evnt.target !== $("#middle-line")[0] && evnt.target !== $("#years-line")[0] && evnt.target !== innerLine()) {
 			isMouseDownOnBottom = false;
+			startTime = endTime = 0;
 			if (!isUsedByAnimation) canMove = false;
-			endTime = new Date().getTime();
-		}, true);
-		bottom.addEventListener("mouseleave", function (evnt) {
-			if (!$(evnt.target).hasClass("box") && evnt.target !== $("#middle-line")[0] && evnt.target !== $("#years-line")[0] && evnt.target !== innerLine()) {
-				isMouseDownOnBottom = false;
-				startTime = endTime = 0;
-				if (!isUsedByAnimation) canMove = false;
-			}
-		}, true);
+		}
+	};
+	
+	function initializeMovement () {
+		let bottom = document.getElementById("bottom");
+		bottom.addEventListener("mousedown", onDownOnLine, true);
+		bottom.addEventListener("touchstart", onDownOnLine, true);
+		bottom.addEventListener("mousemove", onMoveOnLine, true);
+		bottom.addEventListener("touchmove", onMoveOnLine, true);
+		bottom.addEventListener("mouseup", onUpOnLine, true);
+		bottom.addEventListener("touchend", onUpOnLine, true);
+		bottom.addEventListener("mouseleave", onLeaveOnLine, true);
+		bottom.addEventListener("touchcancel", onLeaveOnLine, true);
 	};
 	
 	function stopAnimation() {

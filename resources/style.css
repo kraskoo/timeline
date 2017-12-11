@@ -158,7 +158,6 @@ body {
 	background-size: calc(1vw + 120px) calc(1vh + 40px);
 	color: black;
 	font-style: normal;
-	font-weight: bold;
 }
 
 .close {
@@ -166,7 +165,6 @@ body {
 	background-size: calc(1vw + 120px) calc(1vh + 40px);
 	color: #3f3f3f;
 	font-style: italic;
-	font-weight: bold;
 }
 
 .arrows {

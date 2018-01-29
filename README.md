@@ -1,2 +1,2 @@
 # timeline
-event schedules
+event's schedule
